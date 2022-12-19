@@ -1,0 +1,37 @@
+pipeline:
+  name: jacoco
+  identifier: jacoco
+  projectIdentifier: pranavt1
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: pranavgithub
+        repoName: codecov-travis-maven-junit5-example
+        build: <+input>
+  stages:
+    - stage:
+        name: build
+        identifier: build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: buildandtest
+                  identifier: buildandtest
+                  spec:
+                    shell: Sh
+                    command: |-
+                      echo hi
+                      mvn clean package
