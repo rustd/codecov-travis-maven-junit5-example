@@ -38,12 +38,3 @@ pipeline:
                       ls codecov-test2/target/site/jacoco/index.html
                       ls
                       echo codecov-test2/target/site/jacoco/*
-              - step:
-                  type: S3Upload
-                  name: jacoco
-                  identifier: jacoco
-                  spec:
-                    connectorRef: AWS
-                    region: us-west-2
-                    bucket: pranavtest1
-                    sourcePath: codecov-test2/target/site/jacoco/*
