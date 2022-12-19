@@ -37,3 +37,12 @@ pipeline:
                       mvn clean package
                       ls codecov-test2/target/site/jacoco/index.html
                       ls
+              - step:
+                  type: S3Upload
+                  name: jacoco
+                  identifier: jacoco
+                  spec:
+                    connectorRef: AWS
+                    region: us-west-1
+                    bucket: pranav
+                    sourcePath: codecov-test2/target/site/jacoco/index.html
