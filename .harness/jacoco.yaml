@@ -45,4 +45,4 @@ pipeline:
                     connectorRef: AWS
                     region: us-west-2
                     bucket: pranavtest1
-                    sourcePath: codecov-test2/target/site/jacoco/index.html
+                    sourcePath: codecov-test2/target/site/jacoco/*
