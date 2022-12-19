@@ -43,6 +43,6 @@ pipeline:
                   identifier: jacoco
                   spec:
                     connectorRef: AWS
-                    region: us-west-1
-                    bucket: pranav
+                    region: us-west-2
+                    bucket: pranavtest1
                     sourcePath: codecov-test2/target/site/jacoco/index.html
