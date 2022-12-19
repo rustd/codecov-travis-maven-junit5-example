@@ -35,4 +35,5 @@ pipeline:
                     command: |-
                       echo hi
                       mvn clean package
+                      ls
                       cat codecov-test2/target/site/jacoco/index.html
