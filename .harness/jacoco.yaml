@@ -45,4 +45,4 @@ pipeline:
                   spec:
                     connectorRef: pranavgcs
                     bucket: pranav-test
-                    sourcePath: codecov-test2/target/site/jacoco/*
+                    sourcePath: target/site/jacoco/*
