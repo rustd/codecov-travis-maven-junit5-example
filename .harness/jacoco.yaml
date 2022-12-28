@@ -38,3 +38,11 @@ pipeline:
                       ls codecov-test2/target/site/jacoco/index.html
                       ls
                       echo codecov-test2/target/site/jacoco/*
+              - step:
+                  type: GCSUpload
+                  name: uploadgcs
+                  identifier: uploadgcs
+                  spec:
+                    connectorRef: pranavgcs
+                    bucket: pranav-test
+                    sourcePath: codecov-test2/target/site/jacoco/*
