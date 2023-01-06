@@ -39,6 +39,15 @@ pipeline:
                       ls
                       echo codecov-test2/target/site/jacoco/*
               - step:
+                  type: S3Upload
+                  name: upload
+                  identifier: upload
+                  spec:
+                    connectorRef: AWS
+                    region: us-west-2
+                    bucket: pranavtest1
+                    sourcePath: codecov-test2/target/site/jacoco/index.html
+              - step:
                   type: GCSUpload
                   name: uploadgcs
                   identifier: uploadgcs
