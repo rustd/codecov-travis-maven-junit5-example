@@ -46,7 +46,8 @@ pipeline:
                     connectorRef: AWS
                     region: us-west-2
                     bucket: pranavtest1
-                    sourcePath: codecov-test2/target/site/jacoco/index.html
+                    target: test1
+                    sourcePath: codecov-test2/target/site/jacoco/*
               - step:
                   type: GCSUpload
                   name: uploadgcs
@@ -54,4 +55,4 @@ pipeline:
                   spec:
                     connectorRef: pranavgcs
                     bucket: pranav-test
-                    sourcePath: codecov-test2/target/site/jacoco*
+                    sourcePath: codecov-test2/target/site/jacoco/index.html
