@@ -46,13 +46,4 @@ pipeline:
                     connectorRef: AWS
                     region: us-west-2
                     bucket: pranavtest1
-                    target: test1
                     sourcePath: codecov-test2/target/site/jacoco/*
-              - step:
-                  type: GCSUpload
-                  name: uploadgcs
-                  identifier: uploadgcs
-                  spec:
-                    connectorRef: pranavgcs
-                    bucket: pranav-test
-                    sourcePath: codecov-test2/target/site/jacoco/index.html
